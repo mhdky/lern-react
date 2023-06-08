@@ -55,3 +55,105 @@ npm run format
 ```
 
 Sumber: [Parsinta](https://youtu.be/XUaniwUb5PM?list=PLRKMmwY3-5MwC02nYlx4kgyNO0fRvPdDc&t=26)
+
+
+## #Satu Component Mempunyai Banyak Component
+
+* Buat Component Baru
+* Tambahkan Code di Bawah ini Pada Component Yang Telah Dibuat
+
+```javascript
+function Card({ children }) {
+    return <div className='border rounded overflow-hidden'>{children}</div>;
+}
+
+function Title({ children }) {
+    return <h1 className='p-4 text-xl font-medium border-b'>{children}</h1>;
+}
+
+function Excerpt({ children }) {
+    return <p className="p-4">{children}</p>
+}
+
+function Footer({ children }) {
+    return <div className="bg-slate-50 p-4 flex justify-end">{children}</div>
+}
+
+Card.Title = Title;
+Card.Excerpt = Excerpt;
+Card.Footer = Footer;
+
+export default Card;
+```
+
+* Import Card Ke dalam App.jsx
+```javascript
+ import Button from './components/Button';
+import Card from './components/Card';
+
+export default function App() {
+    return (
+        <div className='w-[1100px] mx-auto my-20 grid grid-cols-3 gap-5'>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+            <Card>
+                <Card.Title>Hello World</Card.Title>
+
+                <Card.Excerpt>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquid nulla quibusdam ex sunt sint molestias labore magni quam quod?</Card.Excerpt>
+            
+                <Card.Footer><Button>Read More</Button></Card.Footer>
+            </Card>
+        </div>
+    );
+}
+
+```
+
+Sumber: [Parsinta](https://youtu.be/E3EjPZdjB_o?list=PLRKMmwY3-5MwC02nYlx4kgyNO0fRvPdDc&t=510)
