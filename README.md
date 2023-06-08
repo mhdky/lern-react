@@ -28,9 +28,9 @@ npm install --save-dev --save-exact prettier
 
 ### Cara Menggunakan Prettier
 
-⋅⋅* Buat file baru di root dengan nama `.prettierrc.json`
+* Buat file baru di root dengan nama `.prettierrc.json`
 
-⋅⋅* Unordered sub-list.
+* Masukan Rules
 
 ```
 {
@@ -41,7 +41,7 @@ npm install --save-dev --save-exact prettier
 }
 ```
 
-⋅⋅* Pindahkan NPX
+* Pindahkan NPX
 
 Pindahkan code `npx` ke dalam file `package.json` lalu masukan kode di bawah ini pada file tersebut di bagian `scripts`
 
