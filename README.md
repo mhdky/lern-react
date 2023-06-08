@@ -30,7 +30,7 @@ npm install --save-dev --save-exact prettier
 
 ⋅⋅* Buat file baru di root dengan nama `.prettierrc.json`
 
-⋅⋅* Masukan Rules
+⋅⋅* Unordered sub-list.
 
 ```
 {
