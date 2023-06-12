@@ -6,7 +6,7 @@
 
 ## #Instal React Dengan Vite Js
 ```
-npm create vite@latest lern-react -- --template-react
+npm create vite@latest lern-react -- --template react
 
 cd lern-react
 
