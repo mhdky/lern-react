@@ -157,3 +157,54 @@ export default function App() {
 ```
 
 Sumber: [Parsinta](https://youtu.be/E3EjPZdjB_o?list=PLRKMmwY3-5MwC02nYlx4kgyNO0fRvPdDc&t=510)
+
+
+## #React Router
+
+* Install React Router
+
+```
+npm install react-router-dom
+```
+
+* Buka file main.jsx
+
+```javascript
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+```
+
+* Definisikan router
+
+```javascript
+const router = createBrowserRouter([
+  {
+    path: '/login',
+    element: <LoginPage />
+  },
+]);
+```
+
+* Tambahkan kode di bawah ini pada ` <React.StrictMode> `
+
+```javascript
+<RouterProvider router={router} />
+```
+
+* Import pages login
+
+```javascript
+import LoginPage from './pages/login';
+```
+
+
+Sumber: [Vip Code Studio](https://www.youtube.com/watch?v=SYJpUJmYBRk&list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&index=6&t=525s)
+
+
+
+## #Client Side Routing
+
+* Ganti tag ` a href ` menjadi ` <Link to='/login'></Link> `
+* ` import {Link} from 'react-router-dom'; `
+
+
+Sumber: [Vip Code Studio](https://youtu.be/SYJpUJmYBRk?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=752)
