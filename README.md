@@ -46,7 +46,7 @@ npm install --save-dev --save-exact prettier
 Pindahkan code `npx` ke dalam file `package.json` lalu masukan kode di bawah ini pada file tersebut di bagian `scripts`
 
 ```
-"format": "npm prettier --write .", 
+"format": "npx prettier --write .", 
 ```
 
 Jalankan 
