@@ -208,3 +208,39 @@ Sumber: [Vip Code Studio](https://www.youtube.com/watch?v=SYJpUJmYBRk&list=PLmF_
 
 
 Sumber: [Vip Code Studio](https://youtu.be/SYJpUJmYBRk?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=752)
+
+
+## #Counter Dengan Class Component
+
+* Definisikan state dengan cara
+  
+  ```javascript
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0    
+    };
+  }
+  ```
+
+* Tampilkan hasil count
+    
+  ```javascript
+  {this.state.count}
+  ```
+
+* Update state dengan event handling
+
+  ```javascript
+  onClick{() => this.setState({count: this.state.count + 1})}
+  ```
+
+Sumber: [Vip Code Studio](https://youtu.be/qHQv_cRmJiQ?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=399)
+
+## #Cara membuat penulisan ribuan yang benar pada integer pada javascript
+
+```javascript
+{price.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'})}
+```
+
+Sumber: [Vip Code Studio](https://youtu.be/ptx1eNK-DuY?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=379)
