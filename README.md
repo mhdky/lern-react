@@ -240,7 +240,23 @@ Sumber: [Vip Code Studio](https://youtu.be/qHQv_cRmJiQ?list=PLmF_zPV9ZcP346sttD4
 ## #Cara membuat penulisan ribuan yang benar pada integer pada javascript
 
 ```javascript
-{price.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'})}
+{price.toLocaleString('id-ID', {styles: 'currency', currency: 'IDR'})}
 ```
 
 Sumber: [Vip Code Studio](https://youtu.be/ptx1eNK-DuY?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=379)
+
+
+## #Rendering List Dengan map()
+
+```javascript
+{products.map((product) => (
+  <Card.Cards key={product.id}>
+    <Card.ImageProduct>{product.image}</Card.ImageProduct>
+    <Card.NamePruduct>{product.name}</Card.NamePruduct>
+    <Card.PriceProduct>{product.price.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'})}</Card.PriceProduct>
+    <Card.AddToCart />
+  </Card.Cards>
+))}
+```
+
+Sumber: [Vip Code Studio](https://youtu.be/Z_omTIQL5pw?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=167)
