@@ -306,7 +306,7 @@ const handleCart = (id) => {
 ```
 
 * langkah kedelapan buat kondisi dimana ketika sebuah produk yang idnya sama maka hanya qtynya saja yang ditambahkan dan total harga pesanannya
-```javscript
+```javascript
 if(cart.find(item => item.id === id)) {
     setCart(
         cart.map((item) => item.id === id ? {...item, qty: item.qty + 1} : item )
