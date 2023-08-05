@@ -260,3 +260,110 @@ Sumber: [Vip Code Studio](https://youtu.be/ptx1eNK-DuY?list=PLmF_zPV9ZcP346sttD4
 ```
 
 Sumber: [Vip Code Studio](https://youtu.be/Z_omTIQL5pw?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=167)
+
+
+## #Add Product To Cart
+
+* langkah pertama buat state
+```javascript
+const [cart, setCart] = useState([]);
+```
+
+* langkah kedua buat heandler, karena buttonnya banyak maka kirimkan sebuah id dari product.id ke setiap button dan masukan ke dalam function penanganannya
+```javascript
+<Card.AddToCart onClick={() => handleCart(product.id)} />
+```
+
+* langkah ketiga buat function penanganannya dan ambil product.id masukan ke dalam function penanganannya menjadi parameter
+```javascript
+// langkah keempat hasil dari sebauh event ketika di klik, ketika di salah satu tombol di klik apa yang akan kita lakukan begitu
+const handleCart = (id) => {
+  ...cart,
+  setCart = ([
+    {
+      id: id,
+      qty: 1    
+    }
+  ]);
+}
+```
+
+* langkah kelima looping cart
+```javascript
+{cart.map((item) => {
+    // langkah keenam cari produk yang id nya sama dengan id yang di klik
+    const product = products.find((product) => product.id === item.id);
+    // langkah ketujuh tampilkan data dengan menggunakan return 
+    return (
+        <Cart.CartContainer key={item.id}>
+            <Cart.CartProduct cartProductImage={product.image} cartProductName={product.name} />
+            <Cart.CartPrice>{product.price}</Cart.CartPrice>
+            <Cart.CartQty>{item.qty}</Cart.CartQty>
+            <Cart.CartTotal>{item.qty * product.price}</Cart.CartTotal>
+        </Cart.CartContainer>
+    )
+})}
+```
+
+* langkah kedelapan buat kondisi dimana ketika sebuah produk yang idnya sama maka hanya qtynya saja yang ditambahkan dan total harga pesanannya
+```javscript
+if(cart.find(item => item.id === id)) {
+    setCart(
+        cart.map((item) => item.id === id ? {...item, qty: item.qty + 1} : item )
+    );
+} else {
+    // langkah keempat hasil dari sebauh event ketika di klik, ketika di salah satu tombol
+    // di klik apa yang akan kita lakukan begitu
+    setCart([
+        ...cart,
+        {
+            id: id,
+            qty: 1
+        }
+    ]);
+}
+```
+
+* Tampak Seluruh Kode
+```javascript
+// langkah pertama buat state
+const [cart, setCart] = useState([]);
+
+{/* langkah kedua buat heandler, karena buttonnya banyak maka kirimkan sebuah id dari product.id ke setiap button dan masukan ke dalam function penanganannya */}
+<Card.AddToCart onClick={() => handleCart(product.id)} />
+
+// langkah ketiga buat function penanganannya dan ambil product.id masukan ke dalam function penanganannya menjadi parameter const  handleCart = (id) => {
+  // langkah kedelapan buat kondisi dimana ketika sebuah produk yang idnya sama maka hanya qtynya saja yang ditambahkan dan total harga pesanannya
+  if(cart.find(item => item.id === id)) {
+      setCart(
+          cart.map((item) => item.id === id ? {...item, qty: item.qty + 1} : item )
+      );
+  } else {
+      // langkah keempat hasil dari sebauh event ketika di klik, ketika di salah satu tombol di klik apa yang akan kita lakukan begitu
+      setCart([
+          ...cart,
+          {
+              id: id,
+              qty: 1
+          }
+      ]);
+  }
+}
+
+{/* langkah kelima looping cart */}
+{cart.map((item) => {
+    // langkah keenam cari produk yang id nya sama dengan id yang di klik
+    const product = products.find((product) => product.id === item.id);
+    // langkah ketujuh tampilkan data dengan menggunakan return 
+    return (
+        <Cart.CartContainer key={item.id}>
+            <Cart.CartProduct cartProductImage={product.image} cartProductName={product.name} />
+            <Cart.CartPrice>{product.price}</Cart.CartPrice>
+            <Cart.CartQty>{item.qty}</Cart.CartQty>
+            <Cart.CartTotal>{item.qty * product.price}</Cart.CartTotal>
+        </Cart.CartContainer>
+    )
+})}
+```
+
+Sumber: [Vip Code Studio](https://youtu.be/ptx1eNK-DuY?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=187)
