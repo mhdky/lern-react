@@ -367,3 +367,46 @@ const [cart, setCart] = useState([]);
 ```
 
 Sumber: [Vip Code Studio](https://youtu.be/ptx1eNK-DuY?list=PLmF_zPV9ZcP346sttD4Vs2VROLlIp5kPz&t=187)
+
+
+
+## #Add To Cart Tambah Fitur Total Harga Seluruh Pesanan Menggunakan useEffect()
+
+* langkah pertama tambahkan state baru
+```javascript
+const [productTotal, setProductTotal] = useState(0);
+```
+
+* langkah ke dua masukan hasil dari state product total
+```javascript
+<Cart.CartProductTotal>{productTotal}</Cart.CartProductTotal>
+```
+
+* langkah ketiga buat useEffect untuk melakukan perhitungan totol harga keseluruhan
+```javascript
+ useEffect(() => {
+    // cek jika produk ada
+    if(cart.length > 0) {
+        // melakukan penjumlahan untuk setiap produk menggunakan metode reduce()
+        const sum = cart.reduce((acc, item) => { 
+            const product = products.find((product) => product.id === item.id);
+            return acc + product.price * item.qty;
+        }, 0);
+
+        // manampilkan hasil penjumlahan setiap produk dari function sum
+        setProductTotal(sum);  
+
+        // memasukan data ke dalam local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+}, [cart]);
+```
+
+* langkah keempat tampilkan data dari local storage
+```javascript
+useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem('cart')) || []);
+}, []);
+```
+
+Sumber: [Vip Code Studio](https://youtu.be/BE2uTuGGL0Y)
